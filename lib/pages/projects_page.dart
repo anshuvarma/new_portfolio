@@ -30,7 +30,7 @@ class ProjectsPage extends StatelessWidget {
     ];
 
     List<String> githubUrls = [
-      "https://github.com/anshuvarma/Portfolio",
+      "https://github.com/anshuvarma/new_portfolio",
       "https://github.com/anshuvarma/FInger-Counter",
       "https://github.com/anshuvarma/ID-QRCode-Generator",
       "https://github.com/anshuvarma/OS-mini-project"
