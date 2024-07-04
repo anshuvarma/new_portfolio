@@ -66,7 +66,7 @@ class SkillsPage extends StatelessWidget {
     ];
 
     return Scaffold(
-      appBar: AppBarWidget(),
+      appBar: AppBarWidget(currentRoute: '/skills'),
       body: Container(
         height: double.infinity,
         width: double.infinity,
@@ -76,7 +76,8 @@ class SkillsPage extends StatelessWidget {
           child: ListView(
             children: [
               const Text(
-                "Tools & Technologies",
+                "My Digital Toolbox",
+                // "Tools & Technologies",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 30,
@@ -86,7 +87,7 @@ class SkillsPage extends StatelessWidget {
               ),
               const SizedBox(height: 30.0),
               const Text(
-                "I love using so many tools to make my work easier. Here are some of them.",
+                "Explore the technologies that enable me to turn concepts into reality",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25,

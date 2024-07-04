@@ -67,7 +67,7 @@ class ExperiencePage extends StatelessWidget {
     ];
 
     return Scaffold(
-      appBar: AppBarWidget(),
+      appBar: AppBarWidget(currentRoute: '/experience'),
       body: Container(
         height: double.infinity,
         width: double.infinity,
@@ -77,7 +77,7 @@ class ExperiencePage extends StatelessWidget {
           child: ListView(
             children: [
               const Text(
-                "Experience",
+                "Professional Journey",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 30,
@@ -87,7 +87,7 @@ class ExperiencePage extends StatelessWidget {
               ),
               const SizedBox(height: 20.0),
               const Text(
-                "Here is a summary of my professional experience.",
+                "From past internship to present employement—explore my professional evolution.",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25,

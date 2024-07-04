@@ -49,7 +49,7 @@ class ProjectsPage extends StatelessWidget {
     });
 
     return Scaffold(
-      appBar: AppBarWidget(),
+      appBar: AppBarWidget(currentRoute: '/projects'),
       body: Container(
         height: double.infinity,
         width: double.infinity,
@@ -59,7 +59,7 @@ class ProjectsPage extends StatelessWidget {
           child: ListView(
             children: [
               const Text(
-                "Tools & Technologies",
+                "Academic Projects",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 30,
@@ -69,7 +69,7 @@ class ProjectsPage extends StatelessWidget {
               ),
               const SizedBox(height: 30.0),
               const Text(
-                "I love using so many tools to make my work easier. Here are some of them.",
+                "Dive into the details of my academic projects, demonstrating practical knowledge, hands-on experience and dedication to learning",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25,

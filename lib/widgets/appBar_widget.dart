@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-// ignore: depend_on_referenced_packages
 import 'package:url_launcher/url_launcher.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
-  AppBarWidget({super.key});
+  final String currentRoute;
+
+  AppBarWidget({super.key, required this.currentRoute});
 
   // Define URLs
   final List<String> urls = [
@@ -59,13 +60,29 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
                       // Navigate to the respective route
                       Navigator.pushNamed(context, routes[i]);
                     },
-                    child: Text(
-                      appBarText[i],
-                      style: const TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w400,
-                        color: Colors.white,
-                      ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          appBarText[i],
+                          style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w400,
+                              color: currentRoute == routes[i]
+                                  ? Colors.white
+                                  : Colors.white54),
+                        ),
+                        if (currentRoute == routes[i])
+                          Container(
+                            margin: const EdgeInsets.only(top: 2.0),
+                            width: 4,
+                            height: 4,
+                            decoration: const BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Colors.white,
+                            ),
+                          ),
+                      ],
                     ),
                   ),
               ],
@@ -75,7 +92,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
                 IconButton(
                   icon: Image.asset(
                     'assets/images/linkedin.png',
-                    height: 24.0, // Adjust icon size
+                    height: 24.0,
                     width: 24.0,
                   ),
                   onPressed: () {

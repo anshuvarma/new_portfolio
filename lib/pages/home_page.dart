@@ -91,7 +91,7 @@ class HomePage extends StatelessWidget {
     ];
 
     return Scaffold(
-      appBar: AppBarWidget(),
+      appBar: AppBarWidget(currentRoute: '/'),
       body: Container(
         height: double.infinity,
         width: double.infinity,
@@ -101,7 +101,7 @@ class HomePage extends StatelessWidget {
           child: Column(
             children: [
               const Text(
-                "Hey There,",
+                "Hey There, Discover the Person Behind the Page",
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.w200,
@@ -112,7 +112,7 @@ class HomePage extends StatelessWidget {
                 height: 30.0,
               ),
               const Text(
-                "Let's Get Familiar.....",
+                "Read on to find out more about who I am and what Interests I have",
                 style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.w200,

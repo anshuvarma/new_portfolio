@@ -109,7 +109,7 @@ class EducationPage extends StatelessWidget {
       ]
     ];
     return Scaffold(
-      appBar: AppBarWidget(),
+      appBar: AppBarWidget(currentRoute: '/education'),
       body: Container(
         height: double.infinity,
         width: double.infinity,
@@ -120,7 +120,7 @@ class EducationPage extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  "Academic Education",
+                  "Educational Background",
                   style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.w200,
@@ -131,7 +131,8 @@ class EducationPage extends StatelessWidget {
                   height: 30.0,
                 ),
                 Text(
-                  "A quick glimpse into my educational journey",
+                  "A glimpse into my academic journey from school student to computer engineering graduate",
+                  // "A quick glimpse into my educational journey",
                   style: TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.w200,
