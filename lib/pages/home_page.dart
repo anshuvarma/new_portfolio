@@ -12,6 +12,53 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // List<List<Widget>> cardTitles = [
+    //   [
+    //     Row(
+    //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    //       children: [
+    //         Text(
+    //           'Software Developer',
+    //           style: TextStyle(color: Colors.white),
+    //         ),
+    //         Text(
+    //           'May 2024 - Present',
+    //           style: TextStyle(color: Colors.white),
+    //         ),
+    //       ],
+    //     ),
+    //   ],
+    //   [
+    //     Row(
+    //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    //       children: [
+    //         Text(
+    //           'Software Developer',
+    //           style: TextStyle(color: Colors.white),
+    //         ),
+    //         Text(
+    //           'May 2024 - Present',
+    //           style: TextStyle(color: Colors.white),
+    //         ),
+    //       ],
+    //     ),
+    //   ],
+    //   [
+    //     Row(
+    //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    //       children: [
+    //         Text(
+    //           'Software Developer',
+    //           style: TextStyle(color: Colors.white),
+    //         ),
+    //         Text(
+    //           'May 2024 - Present',
+    //           style: TextStyle(color: Colors.white),
+    //         ),
+    //       ],
+    //     ),
+    //   ],
+    // ];
     List<String> cardTitles = ["Introduction", "Background", "Interests"];
     List<List<Widget>> cardDesc = [
       [
@@ -101,10 +148,10 @@ class HomePage extends StatelessWidget {
           child: Column(
             children: [
               const Text(
-                "Hey There, Discover the Person Behind the Page",
+                "Hi There, Discover the Person Behind the Page",
                 style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.w200,
+                  fontSize: 25,
+                  fontWeight: FontWeight.w400,
                   color: Colors.white,
                 ),
               ),
@@ -112,11 +159,11 @@ class HomePage extends StatelessWidget {
                 height: 30.0,
               ),
               const Text(
-                "Read on to find out more about who I am and what Interests I have",
+                "Read on to find out more about who I am",
                 style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.w200,
-                  color: Colors.white,
+                  fontSize: 23,
+                  fontWeight: FontWeight.w300,
+                  color: Colors.white70,
                 ),
               ),
               const SizedBox(
@@ -124,6 +171,7 @@ class HomePage extends StatelessWidget {
               ),
               Expanded(
                 child: ColumnCardWidget(
+                  mainAxisExtent: 350,
                   cardTitles: cardTitles,
                   cardDesc: cardDesc,
                 ),

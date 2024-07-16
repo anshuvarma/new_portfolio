@@ -3,9 +3,13 @@ import 'package:flutter/material.dart';
 class ColumnCardWidget extends StatelessWidget {
   final List<String> cardTitles;
   final List<List<Widget>> cardDesc;
+  final List<List<Widget>> cardTitle2;
+  final double? mainAxisExtent;
 
   const ColumnCardWidget({
-    required this.cardTitles,
+    this.cardTitles = const [],
+    this.cardTitle2 = const [],
+    this.mainAxisExtent,
     required this.cardDesc,
     super.key,
   });
@@ -18,14 +22,13 @@ class ColumnCardWidget extends StatelessWidget {
         height: 500.0,
         child: GridView.builder(
           physics: const NeverScrollableScrollPhysics(), // Prevents scrolling
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
-            mainAxisExtent: 300.0, // Adjusted height
+            mainAxisExtent: mainAxisExtent ?? 300.0, // Adjusted height
             childAspectRatio: 1.0,
-            // mainAxisSpacing: 1000.0,
             crossAxisSpacing: 20.0, //width space between the cards
           ),
-          itemCount: cardTitles.length,
+          itemCount: cardDesc.length,
           itemBuilder: (context, index) {
             return Card(
               shadowColor: Colors.cyan.shade50,
@@ -39,7 +42,7 @@ class ColumnCardWidget extends StatelessWidget {
               child: Container(
                 color: Colors.black87,
                 child: Padding(
-                  padding: const EdgeInsets.all(15.0),
+                  padding: const EdgeInsets.all(25.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -51,6 +54,11 @@ class ColumnCardWidget extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ), // Bold title
                       ),
+                      const SizedBox(
+                        height: 10.0,
+                      ),
+                      if (cardTitle2.isNotEmpty && index < cardTitle2.length)
+                        ...cardTitle2[index],
                       const SizedBox(
                         height: 10.0,
                       ),

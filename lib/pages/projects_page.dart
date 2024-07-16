@@ -62,8 +62,8 @@ class ProjectsPage extends StatelessWidget {
                 "Academic Projects",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.w200,
+                  fontSize: 25,
+                  fontWeight: FontWeight.w400,
                   color: Colors.white,
                 ),
               ),
@@ -72,9 +72,9 @@ class ProjectsPage extends StatelessWidget {
                 "Dive into the details of my academic projects, demonstrating practical knowledge, hands-on experience and dedication to learning",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.w200,
-                  color: Colors.white,
+                  fontSize: 23,
+                  fontWeight: FontWeight.w300,
+                  color: Colors.white70,
                 ),
               ),
               const SizedBox(height: 20.0),

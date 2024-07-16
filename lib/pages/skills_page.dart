@@ -76,12 +76,12 @@ class SkillsPage extends StatelessWidget {
           child: ListView(
             children: [
               const Text(
-                "My Digital Toolbox",
+                "Tools & Technologies",
                 // "Tools & Technologies",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.w200,
+                  fontSize: 25,
+                  fontWeight: FontWeight.w400,
                   color: Colors.white,
                 ),
               ),
@@ -90,9 +90,9 @@ class SkillsPage extends StatelessWidget {
                 "Explore the technologies that enable me to turn concepts into reality",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.w200,
-                  color: Colors.white,
+                  fontSize: 23,
+                  fontWeight: FontWeight.w300,
+                  color: Colors.white70,
                 ),
               ),
               const SizedBox(height: 20.0),

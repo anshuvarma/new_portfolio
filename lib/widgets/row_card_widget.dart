@@ -7,7 +7,7 @@ class RowCardWidget extends StatelessWidget {
   // final String githubUrl;
   final double? mainAxisExtent; // Max height of each card
   final double maxCrossAxisExtent; // Max width of each card
-  final double mainAxisSpacing;
+  final double mainAxisSpacing; 
   final double crossAxisSpacing;
   final double? childAspectRatio; // Aspect ratio of each card
   final Axis scrollDirection; // Scroll direction of the grid

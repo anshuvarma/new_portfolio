@@ -13,6 +13,7 @@ analyzer:
     depend_on_referenced_packages: ignore
     file_names: ignore
     library_private_types_in_public_api: ignore
+    prefer_const_constructors: ignore
     prefer_const_literals_to_create_immutables: ignore
     sized_box_for_whitespace: ignore
     unnecessary_to_list_in_spreads: ignore

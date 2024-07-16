@@ -122,8 +122,8 @@ class EducationPage extends StatelessWidget {
                 Text(
                   "Educational Background",
                   style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.w200,
+                    fontSize: 25,
+                    fontWeight: FontWeight.w400,
                     color: Colors.white,
                   ),
                 ),
@@ -132,11 +132,10 @@ class EducationPage extends StatelessWidget {
                 ),
                 Text(
                   "A glimpse into my academic journey from school student to computer engineering graduate",
-                  // "A quick glimpse into my educational journey",
                   style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.w200,
-                    color: Colors.white,
+                    fontSize: 23,
+                    fontWeight: FontWeight.w300,
+                    color: Colors.white70,
                   ),
                 ),
                 SizedBox(
@@ -145,6 +144,7 @@ class EducationPage extends StatelessWidget {
                 ColumnCardWidget(
                   cardTitles: cardTitles,
                   cardDesc: cardDesc,
+                  mainAxisExtent: 250.0,
                 )
               ],
             ),
