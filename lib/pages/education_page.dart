@@ -1,8 +1,10 @@
 // ignore_for_file: unused_import, unused_local_variable, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:web_app/constants.dart';
 import 'package:web_app/widgets/appBar_widget.dart';
 import 'package:web_app/widgets/column_card_widget.dart';
+import 'package:web_app/widgets/divider_widget.dart';
 import 'package:web_app/widgets/row_card_widget.dart';
 
 class EducationPage extends StatelessWidget {
@@ -25,27 +27,27 @@ class EducationPage extends StatelessWidget {
           children: const [
             Text(
               'Degree : Bachelor of Engineering',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: AppColors.fontColor),
             ),
             SizedBox(height: 10.0),
             Text(
               'Specialization: Computer Engineering',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: AppColors.fontColor),
             ),
             SizedBox(height: 10.0),
             Text(
               'College : Datta Meghe College of Engineering',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: AppColors.fontColor),
             ),
             SizedBox(height: 10.0),
             Text(
               'May 2018 - May 2022 - 4 years ',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: AppColors.fontColor),
             ),
             SizedBox(height: 10.0),
             Text(
               'Score : 9.17 CGPA',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: AppColors.fontColor),
             ),
           ],
         ),
@@ -56,27 +58,27 @@ class EducationPage extends StatelessWidget {
           children: const [
             Text(
               'Degree : Higher Secondary School',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: AppColors.fontColor),
             ),
             SizedBox(height: 10.0),
             Text(
               'Specialization: Science',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: AppColors.fontColor),
             ),
             SizedBox(height: 10.0),
             Text(
               'College : R.K.Talreja Jr College',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: AppColors.fontColor),
             ),
             SizedBox(height: 10.0),
             Text(
               'May 2016 - May 2018 - 2 years ',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: AppColors.fontColor),
             ),
             SizedBox(height: 10.0),
             Text(
               'Score : 76%',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: AppColors.fontColor),
             ),
           ],
         ),
@@ -87,22 +89,22 @@ class EducationPage extends StatelessWidget {
           children: const [
             Text(
               'Degree : Secondary School',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: AppColors.fontColor),
             ),
             SizedBox(height: 10.0),
             Text(
               'School : New Era English High',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: AppColors.fontColor),
             ),
             SizedBox(height: 10.0),
             Text(
               'May 2003 - May 2013 - 13 years ',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: AppColors.fontColor),
             ),
             SizedBox(height: 10.0),
             Text(
               'Score : 85.40%',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: AppColors.fontColor),
             ),
           ],
         ),
@@ -113,31 +115,24 @@ class EducationPage extends StatelessWidget {
       body: Container(
         height: double.infinity,
         width: double.infinity,
-        color: Colors.black87,
+        color: AppColors.pageBackgroundColor,
+        // color: Colors.black87,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 50.0),
           child: SingleChildScrollView(
             child: Column(
               children: [
-                Text(
-                  "Educational Background",
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.white,
-                  ),
-                ),
+                Text("Educational Background", style: AppColors.heading),
                 SizedBox(
                   height: 30.0,
                 ),
                 Text(
-                  "A glimpse into my academic journey from school student to computer engineering graduate",
-                  style: TextStyle(
-                    fontSize: 23,
-                    fontWeight: FontWeight.w300,
-                    color: Colors.white70,
-                  ),
+                    "A glimpse into my academic journey from school student to computer engineering graduate",
+                    style: AppColors.subHeading),
+                SizedBox(
+                  height: 30.0,
                 ),
+                DividerWidget(),
                 SizedBox(
                   height: 20.0,
                 ),

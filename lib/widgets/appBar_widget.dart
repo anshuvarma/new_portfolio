@@ -43,6 +43,9 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       shadowColor: Colors.cyan.shade100,
       backgroundColor: const Color.fromARGB(221, 0, 0, 0),
+      iconTheme: const IconThemeData(
+          size: 20.0,
+          color: Colors.white), // Set the back arrow icon color to white
       title: Padding(
         padding: const EdgeInsets.all(10),
         child: Row(

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:web_app/constants.dart';
 import 'package:web_app/widgets/appBar_widget.dart';
 import 'package:web_app/widgets/column_card_widget.dart';
+import 'package:web_app/widgets/divider_widget.dart';
 
 class ExperiencePage extends StatelessWidget {
   const ExperiencePage({super.key});
@@ -100,7 +102,8 @@ class ExperiencePage extends StatelessWidget {
       body: Container(
         height: double.infinity,
         width: double.infinity,
-        color: Colors.black87,
+        color: Color.fromARGB(221, 13, 12, 12),
+        // color: Colors.black87,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 50.0),
           child: Column(
@@ -108,26 +111,20 @@ class ExperiencePage extends StatelessWidget {
               const Text(
                 "Professional Journey",
                 textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.w400,
-                  color: Colors.white,
-                ),
+                style: AppColors.heading,
               ),
               const SizedBox(height: 20.0),
               const Text(
                 "From past internship to present employment—explore my professional evolution.",
                 textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 23,
-                  fontWeight: FontWeight.w300,
-                  color: Colors.white70,
-                ),
+                style: AppColors.subHeading,
               ),
-              const SizedBox(height: 20.0),
+              const SizedBox(height: 30.0),
+              DividerWidget(),
+              const SizedBox(height: 10.0),
               Expanded(
                 child: ColumnCardWidget(
-                  mainAxisExtent: 400,
+                  mainAxisExtent: 370,
                   cardTitles: cardTitles, // Pass an empty list if not used
                   cardTitle2: experienceCardTitles,
                   cardDesc: experienceCardDesc,

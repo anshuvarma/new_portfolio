@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:web_app/constants.dart';
 
 class ColumnCardWidget extends StatelessWidget {
   final List<String> cardTitles;
@@ -31,7 +32,7 @@ class ColumnCardWidget extends StatelessWidget {
           itemCount: cardDesc.length,
           itemBuilder: (context, index) {
             return Card(
-              shadowColor: Colors.cyan.shade50,
+              shadowColor: AppColors.cardShadowColor,
               elevation: 5.0,
               shape: const RoundedRectangleBorder(
                 side: BorderSide(
@@ -40,7 +41,8 @@ class ColumnCardWidget extends StatelessWidget {
                 ),
               ),
               child: Container(
-                color: Colors.black87,
+                color: AppColors.cardBackgroundColor,
+                // color: Colors.black87,
                 child: Padding(
                   padding: const EdgeInsets.all(25.0),
                   child: Column(
@@ -48,11 +50,7 @@ class ColumnCardWidget extends StatelessWidget {
                     children: [
                       Text(
                         cardTitles[index],
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.bold,
-                        ), // Bold title
+                        style: AppColors.cardTitle, // Bold title
                       ),
                       const SizedBox(
                         height: 10.0,

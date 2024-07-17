@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:web_app/constants.dart';
 
 class RowCardWidget extends StatelessWidget {
   final List<String>
@@ -7,7 +8,7 @@ class RowCardWidget extends StatelessWidget {
   // final String githubUrl;
   final double? mainAxisExtent; // Max height of each card
   final double maxCrossAxisExtent; // Max width of each card
-  final double mainAxisSpacing; 
+  final double mainAxisSpacing;
   final double crossAxisSpacing;
   final double? childAspectRatio; // Aspect ratio of each card
   final Axis scrollDirection; // Scroll direction of the grid
@@ -47,26 +48,23 @@ class RowCardWidget extends StatelessWidget {
           itemCount: titles.length,
           itemBuilder: (context, index) {
             return Card(
-              shadowColor: Colors.cyan.shade50,
+              shadowColor: AppColors.cardShadowColor,
               elevation: 5.0,
               shape: const RoundedRectangleBorder(
                 side: BorderSide(
-                  color: Colors.white,
+                  color: AppColors.fontColor,
                   width: 0.5,
                 ),
               ),
               child: Container(
-                color: Colors.black87,
+                color: AppColors.cardBackgroundColor,
+                // color: Colors.black87,
                 padding: const EdgeInsets.all(15.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     if (titles[index].isNotEmpty)
-                      Text(
-                        titles[index],
-                        style: const TextStyle(
-                            color: Colors.white, fontSize: 18.0),
-                      ),
+                      Text(titles[index], style: AppColors.cardTitle),
                     const SizedBox(height: 10.0),
                     Wrap(
                       spacing: 10.0, // Adjust spacing between items

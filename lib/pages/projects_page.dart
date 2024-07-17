@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:web_app/constants.dart';
 import 'package:web_app/widgets/appBar_widget.dart';
+import 'package:web_app/widgets/divider_widget.dart';
 import 'package:web_app/widgets/row_card_widget.dart';
 import 'package:web_app/widgets/skills_card_column.dart';
 
@@ -53,7 +55,8 @@ class ProjectsPage extends StatelessWidget {
       body: Container(
         height: double.infinity,
         width: double.infinity,
-        color: Colors.black87,
+        color: AppColors.pageBackgroundColor,
+        // color: Colors.black87,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 50.0),
           child: ListView(
@@ -61,22 +64,16 @@ class ProjectsPage extends StatelessWidget {
               const Text(
                 "Academic Projects",
                 textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.w400,
-                  color: Colors.white,
-                ),
+                style: AppColors.heading,
               ),
               const SizedBox(height: 30.0),
               const Text(
                 "Dive into the details of my academic projects, demonstrating practical knowledge, hands-on experience and dedication to learning",
                 textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 23,
-                  fontWeight: FontWeight.w300,
-                  color: Colors.white70,
-                ),
+                style: AppColors.subHeading,
               ),
+              const SizedBox(height: 30.0),
+              DividerWidget(),
               const SizedBox(height: 20.0),
               RowCardWidget(
                 // cardTitles: cardTitles,
