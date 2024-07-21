@@ -72,9 +72,8 @@ class SkillsPage extends StatelessWidget {
       final isMobile = constraints.maxWidth < 600;
       return Scaffold(
         appBar: AppBarWidget(currentRoute: '/skills'),
-        endDrawer: MediaQuery.of(context).size.width < 600
-            ?  MobileAppBar()
-            : null,
+        endDrawer:
+            MediaQuery.of(context).size.width < 600 ? MobileAppBar() : null,
         body: Container(
           height: double.infinity,
           width: double.infinity,
@@ -91,7 +90,7 @@ class SkillsPage extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: AppColors.heading,
                 ),
-                const SizedBox(height: 30.0),
+                const SizedBox(height: 20.0),
                 const Text(
                   "Explore the technologies that enable me to turn concepts into reality",
                   textAlign: TextAlign.center,

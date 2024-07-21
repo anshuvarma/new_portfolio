@@ -128,7 +128,7 @@ class HomePage extends StatelessWidget {
           child: Column(
             children: [
               const Text(
-                "Discover the Person Behind the Page",
+                "Hey There, Lets Get Acquainted",
                 style: AppColors.heading,
                 textAlign: TextAlign.center,
               ),

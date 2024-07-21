@@ -101,7 +101,7 @@ class ExperiencePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBarWidget(currentRoute: '/experience'),
       endDrawer:
-          MediaQuery.of(context).size.width < 600 ?  MobileAppBar() : null,
+          MediaQuery.of(context).size.width < 600 ? MobileAppBar() : null,
       body: Container(
         height: double.infinity,
         width: double.infinity,
@@ -117,13 +117,13 @@ class ExperiencePage extends StatelessWidget {
               ),
               const SizedBox(height: 20.0),
               const Text(
-                "From past internship to present employment—explore my professional evolution.",
+                "From past internship to present employment",
                 textAlign: TextAlign.center,
                 style: AppColors.subHeading,
               ),
               const SizedBox(height: 30.0),
               DividerWidget(),
-              const SizedBox(height: 10.0),
+              const SizedBox(height: 20.0),
               Expanded(
                 child: ColumnCardWidget(
                   mainAxisExtent: 370,

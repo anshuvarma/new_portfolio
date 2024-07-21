@@ -55,9 +55,8 @@ class ProjectsPage extends StatelessWidget {
       final isMobile = constraints.maxWidth < 600;
       return Scaffold(
         appBar: AppBarWidget(currentRoute: '/projects'),
-        endDrawer: MediaQuery.of(context).size.width < 600
-            ?  MobileAppBar()
-            : null,
+        endDrawer:
+            MediaQuery.of(context).size.width < 600 ? MobileAppBar() : null,
         body: Container(
           height: double.infinity,
           width: double.infinity,
@@ -72,9 +71,9 @@ class ProjectsPage extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: AppColors.heading,
                 ),
-                const SizedBox(height: 30.0),
+                const SizedBox(height: 20.0),
                 const Text(
-                  "Dive into the details of my academic projects, demonstrating practical knowledge, hands-on experience and dedication to learning",
+                  "Take a look at some of the projects I've worked on",
                   textAlign: TextAlign.center,
                   style: AppColors.subHeading,
                 ),

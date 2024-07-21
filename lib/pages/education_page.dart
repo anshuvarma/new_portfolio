@@ -114,7 +114,7 @@ class EducationPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBarWidget(currentRoute: '/education'),
       endDrawer:
-          MediaQuery.of(context).size.width < 600 ?  MobileAppBar() : null,
+          MediaQuery.of(context).size.width < 600 ? MobileAppBar() : null,
       body: Container(
         height: double.infinity,
         width: double.infinity,
@@ -127,12 +127,10 @@ class EducationPage extends StatelessWidget {
               Text("Educational Background",
                   textAlign: TextAlign.center, style: AppColors.heading),
               SizedBox(
-                height: 30.0,
+                height: 20.0,
               ),
-              Text(
-                  "A glimpse into my academic journey from school student to computer engineering graduate",
-                  textAlign: TextAlign.center,
-                  style: AppColors.subHeading),
+              Text("A glimpse into my academic journey ",
+                  textAlign: TextAlign.center, style: AppColors.subHeading),
               SizedBox(
                 height: 30.0,
               ),
