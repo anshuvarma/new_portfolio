@@ -21,21 +21,17 @@ class SkillsCardRow extends StatelessWidget {
           width: 0.5,
         ),
       ),
+
+      // Skill Container
       child: Container(
         color: Colors.black87,
         padding: const EdgeInsets.all(15.0),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            ConstrainedBox(
-              constraints: const BoxConstraints(
-                maxWidth: 80,
-                maxHeight: 80,
-              ),
-              child: Image.asset(
-                assetPath,
-                fit: BoxFit.contain,
-              ),
+            Image.asset(
+              assetPath,
+              fit: BoxFit.contain,
             ),
             const SizedBox(width: 8.0),
             Flexible(

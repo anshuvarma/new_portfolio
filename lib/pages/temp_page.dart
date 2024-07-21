@@ -1,112 +1,192 @@
 import 'package:flutter/material.dart';
+import 'package:web_app/constants.dart';
+import 'package:web_app/pages/education_page.dart';
+import 'package:web_app/pages/experience_page.dart';
+import 'package:web_app/pages/projects_page.dart';
+import 'package:web_app/pages/skills_page.dart';
+import 'package:web_app/widgets/appBar_widget.dart';
+import 'package:web_app/widgets/column_card_widget.dart';
+import 'package:web_app/widgets/divider_widget.dart';
+import 'package:web_app/widgets/mobile_appBar.dart';
+import 'package:web_app/widgets/row_card_widget.dart';
 
-class TempPage extends StatelessWidget {
-  const TempPage({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.black,
-        body: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                buildSectionTitle('Introduction'),
-                buildCard(
-                  child: const Text(
-                    "Hi everyone! I'm a computing student, solutions developer, and community volunteer. Exploring the fascinating fields of Software Development, Artificial Intelligence, and Cloud Computing technologies, I have a keen interest in and excitement for discovering new things as a student. My passion aligns with enjoying solving problems with code and creating useful applications using computing skills as a solution developer. While I'm doing this, I believe in giving back to the community and sharing my knowledge with others. So, I volunteer for various communities and create content that can help people achieve their goals and improve their lives.",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-                const SizedBox(height: 16),
-                buildSectionTitle('Background'),
-                buildCard(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      buildInfoRow(
-                          Icons.person, 'Name: Dileepa Lakmal Bandara'),
-                      buildInfoRow(Icons.cake, 'Birthday: July 24th'),
-                      buildInfoRow(Icons.male, 'Gender: Male (He/Him/His)'),
-                      buildInfoRow(
-                          Icons.location_on, 'Location: Sri Lanka (GMT+5:30)'),
-                      buildInfoRow(
-                          Icons.language, 'Communicate: English & Sinhala'),
-                    ],
-                  ),
-                ),
-                const SizedBox(height: 16),
-                buildSectionTitle('Goals'),
-                buildCard(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      buildInfoRow(Icons.engineering, 'Follow: AI Engineering'),
-                      buildInfoRow(
-                          Icons.code, 'Practice: Software Development'),
-                      buildInfoRow(Icons.support, 'Support: Tech Communities'),
-                      buildInfoRow(Icons.school, "Complete: Master's Degree"),
-                    ],
-                  ),
-                ),
-                const SizedBox(height: 16),
-                buildSectionTitle('Interests'),
-                buildCard(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      buildInfoRow(Icons.movie, 'Watch: Movies & TV Shows'),
-                      buildInfoRow(Icons.music_note, 'Listen: Songs & Music'),
-                      buildInfoRow(Icons.create, 'Create: Contents & Media'),
-                      buildInfoRow(Icons.explore, 'Explore: New Things'),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget buildSectionTitle(String title) {
-    return Text(
-      title,
-      style: const TextStyle(
-        color: Colors.white,
-        fontSize: 20,
-        fontWeight: FontWeight.bold,
-      ),
-    );
-  }
-
-  Widget buildCard({required Widget child}) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.grey[900],
-        borderRadius: BorderRadius.circular(10),
-      ),
-      padding: const EdgeInsets.all(16),
-      child: child,
-    );
-  }
-
-  Widget buildInfoRow(IconData icon, String text) {
-    return Row(
-      children: [
-        Icon(icon, color: Colors.white),
-        const SizedBox(width: 8),
-        Expanded(
-          child: Text(
-            text,
-            style: const TextStyle(color: Colors.white),
+    List<String> cardTitles = ["Introduction", "Background", "Interests"];
+    List<List<Widget>> cardDesc = [
+      [
+        const Text(
+          "Hello Everyone, I'm a Software Developer with a bachelor's in Computer Engineering. I specialize in Python, app development, and data analysis. My experience includes developing mobile apps with Flutter and data visualizations with Power BI. Currently, I'm at Jio Platforms Limited, driving innovative projects and enhancing user experiences. My technical skills and successful project history make me a valuable team asset. I'm keen on exploring cloud computing and DevOps to improve scalability, reliability, and efficiency in software development.",
+          style: TextStyle(
+            color: AppColors.fontColor,
           ),
         ),
       ],
+      [
+        const Text(
+          'Name: Anshu Varma',
+          style: TextStyle(
+            color: AppColors.fontColor,
+          ),
+        ),
+        const SizedBox(
+          height: 5.0,
+        ),
+        const Text(
+          'Birthday: 10 November 2000',
+          style: TextStyle(
+            color: AppColors.fontColor,
+          ),
+        ),
+        const SizedBox(
+          height: 5.0,
+        ),
+        const Text(
+          'Location: Mumbai, Maharashtra',
+          style: TextStyle(
+            color: AppColors.fontColor,
+          ),
+        ),
+        const SizedBox(
+          height: 5.0,
+        ),
+        const Text(
+          'Gender: Female',
+          style: TextStyle(
+            color: AppColors.fontColor,
+          ),
+        ),
+        const SizedBox(
+          height: 5.0,
+        ),
+        const Text(
+          'Communicate: English, Hindi, Marathi',
+          style: TextStyle(
+            color: AppColors.fontColor,
+          ),
+        ),
+      ],
+      [
+        const Text(
+          'Watching: Movies, TV Shows',
+          style: TextStyle(
+            color: AppColors.fontColor,
+          ),
+        ),
+        const SizedBox(
+          height: 5.0,
+        ),
+        const Text(
+          'Listen: Music & Songs',
+          style: TextStyle(
+            color: AppColors.fontColor,
+          ),
+        ),
+        const SizedBox(
+          height: 5.0,
+        ),
+        const Text(
+          'Cook: Indian, Italian, Chinese',
+          style: TextStyle(
+            color: AppColors.fontColor,
+          ),
+        ),
+        const SizedBox(
+          height: 5.0,
+        ),
+        const Text(
+          'Travel: As much as I can',
+          style: TextStyle(
+            color: AppColors.fontColor,
+          ),
+        ),
+        const SizedBox(
+          height: 5.0,
+        ),
+        const Text(
+          'Technology: Cloud Computing and DevOps Engineering',
+          style: TextStyle(
+            color: AppColors.fontColor,
+          ),
+        ),
+      ],
+    ];
+
+    return Scaffold(
+      appBar: AppBarWidget(currentRoute: '/'),
+      endDrawer: MobileAppBar(),
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          if (constraints.maxWidth < 600) {
+            // Mobile layout
+            return SingleChildScrollView(
+              child: Container(
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 20.0, vertical: 20.0),
+                color: Color.fromARGB(221, 13, 12, 12),
+                child: Column(
+                  children: [
+                    const Text(
+                      "Hi There, Discover the Person Behind the Page",
+                      style: AppColors.heading,
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: 20.0),
+                    const Text(
+                      "Read on to find out more about who I am",
+                      style: AppColors.subHeading,
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: 20.0),
+                    DividerWidget(),
+                    const SizedBox(height: 10.0),
+                    ColumnCardWidget(
+                      mainAxisExtent: 350,
+                      cardTitles: cardTitles,
+                      cardDesc: cardDesc,
+                    ),
+                  ],
+                ),
+              ),
+            );
+          } else {
+            // Web layout
+            return Container(
+              height: double.infinity,
+              width: double.infinity,
+              color: Color.fromARGB(221, 13, 12, 12),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 50.0),
+              child: Column(
+                children: [
+                  const Text(
+                    "Hi There, Discover the Person Behind the Page",
+                    style: AppColors.heading,
+                  ),
+                  const SizedBox(height: 30.0),
+                  const Text(
+                    "Read on to find out more about who I am",
+                    style: AppColors.subHeading,
+                  ),
+                  const SizedBox(height: 30.0),
+                  DividerWidget(),
+                  const SizedBox(height: 10.0),
+                  Expanded(
+                    child: ColumnCardWidget(
+                      mainAxisExtent: 350,
+                      cardTitles: cardTitles,
+                      cardDesc: cardDesc,
+                    ),
+                  ),
+                ],
+              ),
+            );
+          }
+        },
+      ),
     );
   }
 }

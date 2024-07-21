@@ -7,6 +7,7 @@ import 'package:web_app/pages/experience_page.dart';
 import 'package:web_app/pages/home_page.dart';
 import 'package:web_app/pages/projects_page.dart';
 import 'package:web_app/pages/skills_page.dart';
+import 'package:web_app/widgets/mobile_appBar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,7 +28,6 @@ class MyApp extends StatelessWidget {
           '/experience': (context) => ExperiencePage(),
           '/projects': (context) => ProjectsPage(),
           '/education': (context) => EducationPage(),
-          // '/temp': (context) => TempPage(),
         };
         final WidgetBuilder? builder = routes[settings.name];
         if (builder != null) {
@@ -35,7 +35,6 @@ class MyApp extends StatelessWidget {
         }
         return MaterialPageRoute(builder: (context) => ErrorPage());
       },
-      home: HomePage(),
     );
   }
 }

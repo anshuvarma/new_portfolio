@@ -5,6 +5,7 @@ import 'package:web_app/constants.dart';
 import 'package:web_app/widgets/appBar_widget.dart';
 import 'package:web_app/widgets/column_card_widget.dart';
 import 'package:web_app/widgets/divider_widget.dart';
+import 'package:web_app/widgets/mobile_appBar.dart';
 import 'package:web_app/widgets/row_card_widget.dart';
 
 class EducationPage extends StatelessWidget {
@@ -112,37 +113,41 @@ class EducationPage extends StatelessWidget {
     ];
     return Scaffold(
       appBar: AppBarWidget(currentRoute: '/education'),
+      endDrawer:
+          MediaQuery.of(context).size.width < 600 ?  MobileAppBar() : null,
       body: Container(
         height: double.infinity,
         width: double.infinity,
-        color: AppColors.pageBackgroundColor,
+        color: Color.fromARGB(221, 13, 12, 12),
         // color: Colors.black87,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 50.0),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                Text("Educational Background", style: AppColors.heading),
-                SizedBox(
-                  height: 30.0,
-                ),
-                Text(
-                    "A glimpse into my academic journey from school student to computer engineering graduate",
-                    style: AppColors.subHeading),
-                SizedBox(
-                  height: 30.0,
-                ),
-                DividerWidget(),
-                SizedBox(
-                  height: 20.0,
-                ),
-                ColumnCardWidget(
+          child: Column(
+            children: [
+              Text("Educational Background",
+                  textAlign: TextAlign.center, style: AppColors.heading),
+              SizedBox(
+                height: 30.0,
+              ),
+              Text(
+                  "A glimpse into my academic journey from school student to computer engineering graduate",
+                  textAlign: TextAlign.center,
+                  style: AppColors.subHeading),
+              SizedBox(
+                height: 30.0,
+              ),
+              DividerWidget(),
+              SizedBox(
+                height: 20.0,
+              ),
+              Expanded(
+                child: ColumnCardWidget(
                   cardTitles: cardTitles,
                   cardDesc: cardDesc,
                   mainAxisExtent: 250.0,
-                )
-              ],
-            ),
+                ),
+              )
+            ],
           ),
         ),
       ),

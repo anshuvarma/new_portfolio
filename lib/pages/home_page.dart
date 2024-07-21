@@ -7,6 +7,7 @@ import 'package:web_app/pages/skills_page.dart';
 import 'package:web_app/widgets/appBar_widget.dart';
 import 'package:web_app/widgets/column_card_widget.dart';
 import 'package:web_app/widgets/divider_widget.dart';
+import 'package:web_app/widgets/mobile_appBar.dart';
 import 'package:web_app/widgets/row_card_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -14,53 +15,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // List<List<Widget>> cardTitles = [
-    //   [
-    //     Row(
-    //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    //       children: [
-    //         Text(
-    //           'Software Developer',
-    //           style: TextStyle(color: AppColors.fontColor,),
-    //         ),
-    //         Text(
-    //           'May 2024 - Present',
-    //           style: TextStyle(color: AppColors.fontColor,),
-    //         ),
-    //       ],
-    //     ),
-    //   ],
-    //   [
-    //     Row(
-    //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    //       children: [
-    //         Text(
-    //           'Software Developer',
-    //           style: TextStyle(color: AppColors.fontColor,),
-    //         ),
-    //         Text(
-    //           'May 2024 - Present',
-    //           style: TextStyle(color: AppColors.fontColor,),
-    //         ),
-    //       ],
-    //     ),
-    //   ],
-    //   [
-    //     Row(
-    //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    //       children: [
-    //         Text(
-    //           'Software Developer',
-    //           style: TextStyle(color: AppColors.fontColor,),
-    //         ),
-    //         Text(
-    //           'May 2024 - Present',
-    //           style: TextStyle(color: AppColors.fontColor,),
-    //         ),
-    //       ],
-    //     ),
-    //   ],
-    // ];
     List<String> cardTitles = ["Introduction", "Background", "Interests"];
     List<List<Widget>> cardDesc = [
       [
@@ -144,7 +98,7 @@ class HomePage extends StatelessWidget {
           height: 5.0,
         ),
         const Text(
-          'Travel: As much as i can',
+          'Travel: As much as I can',
           style: TextStyle(
             color: AppColors.fontColor,
           ),
@@ -163,32 +117,33 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBarWidget(currentRoute: '/'),
+      endDrawer:
+          MediaQuery.of(context).size.width < 600 ? MobileAppBar() : null,
       body: Container(
         height: double.infinity,
         width: double.infinity,
-        color: Color.fromARGB(221, 13, 12, 12),
-        // color: Colors.black87,
+        color: const Color.fromARGB(221, 13, 12, 12),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 50.0),
           child: Column(
             children: [
-              const Text("Hi There, Discover the Person Behind the Page",
-                  style: AppColors.heading),
-              const SizedBox(
-                height: 30.0,
+              const Text(
+                "Discover the Person Behind the Page",
+                style: AppColors.heading,
+                textAlign: TextAlign.center,
               ),
-              const Text("Read on to find out more about who I am",
-                  style: AppColors.subHeading),
-              const SizedBox(
-                height: 30.0,
+              const SizedBox(height: 20.0),
+              const Text(
+                "Read on to find out more about who I am",
+                style: AppColors.subHeading,
+                textAlign: TextAlign.center,
               ),
+              const SizedBox(height: 30.0),
               DividerWidget(),
-              const SizedBox(
-                height: 10.0,
-              ),
+              const SizedBox(height: 20.0),
               Expanded(
                 child: ColumnCardWidget(
-                  mainAxisExtent: 350,
+                  mainAxisExtent: 330,
                   cardTitles: cardTitles,
                   cardDesc: cardDesc,
                 ),

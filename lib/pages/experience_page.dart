@@ -3,6 +3,7 @@ import 'package:web_app/constants.dart';
 import 'package:web_app/widgets/appBar_widget.dart';
 import 'package:web_app/widgets/column_card_widget.dart';
 import 'package:web_app/widgets/divider_widget.dart';
+import 'package:web_app/widgets/mobile_appBar.dart';
 
 class ExperiencePage extends StatelessWidget {
   const ExperiencePage({super.key});
@@ -99,11 +100,12 @@ class ExperiencePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBarWidget(currentRoute: '/experience'),
+      endDrawer:
+          MediaQuery.of(context).size.width < 600 ?  MobileAppBar() : null,
       body: Container(
         height: double.infinity,
         width: double.infinity,
-        color: Color.fromARGB(221, 13, 12, 12),
-        // color: Colors.black87,
+        color: const Color.fromARGB(221, 13, 12, 12),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 50.0),
           child: Column(
@@ -125,7 +127,7 @@ class ExperiencePage extends StatelessWidget {
               Expanded(
                 child: ColumnCardWidget(
                   mainAxisExtent: 370,
-                  cardTitles: cardTitles, // Pass an empty list if not used
+                  cardTitles: cardTitles,
                   cardTitle2: experienceCardTitles,
                   cardDesc: experienceCardDesc,
                 ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:web_app/constants.dart';
 import 'package:web_app/widgets/appBar_widget.dart';
 import 'package:web_app/widgets/divider_widget.dart';
+import 'package:web_app/widgets/mobile_appBar.dart';
 import 'package:web_app/widgets/row_card_widget.dart';
 import 'package:web_app/widgets/skills_card_column.dart';
 import 'package:web_app/widgets/skills_card_row.dart';
@@ -41,8 +42,8 @@ class SkillsPage extends StatelessWidget {
             label: 'NodeJS', assetPath: 'assets/images/nodejs.png'),
         const SkillsCardRow(
             label: 'Github', assetPath: 'assets/images/github.png'),
-        const SkillsCardRow(
-            label: 'Gitlab', assetPath: 'assets/images/gitlab.png'),
+        // const SkillsCardRow(
+        //     label: 'Gitlab', assetPath: 'assets/images/gitlab.png'),
       ],
 
       // Databases
@@ -67,44 +68,55 @@ class SkillsPage extends StatelessWidget {
       ]
     ];
 
-    return Scaffold(
-      appBar: AppBarWidget(currentRoute: '/skills'),
-      body: Container(
-        height: double.infinity,
-        width: double.infinity,
-        color: AppColors.pageBackgroundColor,
-        // color: Colors.black87,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 50.0),
-          child: ListView(
-            children: [
-              const Text(
-                "Tools & Technologies",
-                // "Tools & Technologies",
-                textAlign: TextAlign.center,
-                style: AppColors.heading,
-              ),
-              const SizedBox(height: 30.0),
-              const Text(
-                "Explore the technologies that enable me to turn concepts into reality",
-                textAlign: TextAlign.center,
-                style: AppColors.subHeading,
-              ),
-              const SizedBox(height: 30.0),
-              DividerWidget(),
-              const SizedBox(height: 20.0),
-              RowCardWidget(
-                cardTitles: cardTitles,
-                cardDesc: cardDesc,
-                maxCrossAxisExtent: 400.0,
-                mainAxisSpacing: 16.0,
-                crossAxisSpacing: 16.0,
-                childAspectRatio: 1.0,
-              ),
-            ],
+    return LayoutBuilder(builder: (context, constraints) {
+      final isMobile = constraints.maxWidth < 600;
+      return Scaffold(
+        appBar: AppBarWidget(currentRoute: '/skills'),
+        endDrawer: MediaQuery.of(context).size.width < 600
+            ?  MobileAppBar()
+            : null,
+        body: Container(
+          height: double.infinity,
+          width: double.infinity,
+          color: AppColors.pageBackgroundColor,
+          // color: Colors.black87,
+          child: Padding(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 20.0, vertical: 50.0),
+            child: Column(
+              children: [
+                const Text(
+                  "Tools & Technologies",
+                  // "Tools & Technologies",
+                  textAlign: TextAlign.center,
+                  style: AppColors.heading,
+                ),
+                const SizedBox(height: 30.0),
+                const Text(
+                  "Explore the technologies that enable me to turn concepts into reality",
+                  textAlign: TextAlign.center,
+                  style: AppColors.subHeading,
+                ),
+                const SizedBox(height: 30.0),
+                DividerWidget(),
+                const SizedBox(height: 20.0),
+                Expanded(
+                  child: RowCardWidget(
+                    mainAxisExtent: isMobile ? 260.0 : 300.0,
+                    cardTitles: cardTitles,
+                    cardDesc: cardDesc,
+                    // maxCrossAxisExtent: 100.0,
+                    mainAxisSpacing: 16.0,
+                    crossAxisSpacing: 16.0,
+                    childAspectRatio: 1.0,
+                    // maxCrossAxisExtent: 40.0,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
-      ),
-    );
+      );
+    });
   }
 }
